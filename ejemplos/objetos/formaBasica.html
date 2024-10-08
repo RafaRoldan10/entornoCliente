@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     /* var libro = {
+        páginas: 18,
+        genero: "Infantil",
+        titulo: "Titanic",
+      };
+
+      console.log(libro);
+
+      var hotel = {
+        nombre: "Hotel mediaestrella",
+        habitaciones: 137,
+        ocupadas: 30,
+        tipohabitaciones: ["sencilla", "doble", "suite"],
+        wifi: true,
+        verificaDisponibilidad: function () {
+          return this.habitaciones - this.ocupadas;
+        },
+      };*/
+
+      var libro = new Object();
+      libro.paginas = 200; 
+      libro.tema= "novela"; 
+      libro.tapa= "blanda";
+      
+    Date.prototype.getCadenaFecha = function(){
+        var dia = String( this.getDate() );
+        var mes = String( this.getMonth() );
+        var anno = this.getFullYear();
+        if( dia.length == 1 ) { dia ="0" + dia; }
+        if( mes.length == 1 ) {mes ="0" + mes; }
+        return dia + "/" + mes + "/" + anno;
+    }
+//Para invocarla:
+var objFecha = new Date( 2011, 4, 3 );
+alert("Fecha: [" + objFecha.getCadenaFecha() + "]" );
+
+    </script>
+  </body>
+</html>

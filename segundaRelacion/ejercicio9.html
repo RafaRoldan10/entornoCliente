@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Construyo el Set
+        const meses = new Set(["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]);
+        //Borro el mes de mayo y lo recorro
+        meses.delete("mayo");
+        document.write("<br>");
+        meses.forEach(element => {
+           document.write(element + " - "); 
+        });
+        //Añado nuevomes
+        meses.add("nuevoMes");
+        document.write("<br>");
+        //Compruebo si existen mayo y junio
+        if(meses.has("mayo") && meses.has("junio")){
+            document.write("tiene los meses de mayo y junio<br>");
+        }
+        else{
+            document.write("No tiene los meses de mayo y junio<br>");
+        }
+        //Paso el set a un array y borro enero
+        const arrayMeses = [...meses];
+        arrayMeses.splice(0,1);
+        //Recorro el set y el array
+        document.write("Recorriendo set: ");
+        meses.forEach(element => {
+           document.write(element + " - "); 
+        });
+        document.write("<br>");
+        document.write("Recorriendo array: ");
+        arrayMeses.forEach(element => {
+           document.write(element + " - "); 
+        });
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creo el mapa
+        const map = new Map([[1, "enero"], [2, "febrero"], [3, "marzo"],[4, "abril"], [5, "mayo"], [6, "junio"],
+        [7, "julio"], [8, "agosto"], [9, "septiembre"],[10, "octubre"], [11, "noviembre"], [12, "diciembre"]]);
+        //Borro el mes de mayo y lo recorro para ver que se ha borrado el mes
+        map.delete(5);
+        map.forEach(element => {
+           document.write(element + " - "); 
+        });
+        //Añado el mes nuevo y recorro para verlo
+        map.set(13,"nuevoMes");
+        document.write("<br>");
+        document.write("Añadido NuevoMes: ");
+        map.forEach(element => {
+           document.write(element + " - "); 
+        });
+        document.write("<br>");
+        //Compruebo si existen los meses de junio y mayo
+        if(map.has(5) && map.has(6)){
+            document.write("tiene los meses de mayo y junio<br>");
+        }
+        else{
+            document.write("No tiene los meses de mayo y junio<br>");
+        }
+        //Paso el mapa a array y borro del array el mes de enero
+        const array = [...map];
+        array.splice(0,1);
+        //Recorro el mapa y el array
+        document.write("Recorriendo mapa: ");
+        map.forEach(element => {
+           document.write(element + " - "); 
+        });
+        document.write("<br>");
+        document.write("Recorriendo array: ");
+        array.forEach(element => {
+           document.write(element + " - "); 
+        });
+    </script>
+</body>
+</html>

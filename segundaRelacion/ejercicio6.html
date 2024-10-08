@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="primero">
+    <input type="text" id="segundo">
+    <input type="text" id="tercero">
+    <input type="button" value="Comprueba el menor" onclick="dimeMenor(parseInt(primero.value),parseInt(segundo.value),parseInt(tercero.value))">
+
+    <script>
+        function dimeMenor(a,b,c){
+            var menor = a;
+            if(b < menor){
+                menor = b;
+            }
+            if(c < menor){
+                menor = c;
+            }
+
+            document.write('El menor es: ' + menor);
+        }
+    </script>
+</body>
+</html>

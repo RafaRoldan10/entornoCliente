@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="primero">
+    <input type="button" value="¿Es palíndromo? " onclick="esPalindromo(primero.value)">
+    <script>
+        function esPalindromo(frase){
+            //Paso la palabra a array para quitar los espacios
+            array = frase.split(" ");
+            var aux="";
+            for(let i = 0; i < array.length; i++){
+                aux += array[i];
+            }
+            console.log(aux);
+            //Lo convierto todo a minusucula para comparar
+            fraseBuena = aux.toLowerCase();
+            var palindromo = true;
+            for(let i = 0 ; i < fraseBuena.length/2 ; i++){
+                if(fraseBuena[i] != fraseBuena[fraseBuena.length-(i+1)]){
+                    palindromo = false;
+                }
+            }
+
+            (palindromo) ? alert('Es palindromo') : alert('No es palindromo');
+        }
+    </script>
+</body>
+</html>

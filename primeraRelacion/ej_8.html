@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Abre Ventana" onclick="abreVentana()">
+    <input type="button" value="Cierra Ventana" onclick="cierraVentana()">
+    <script>
+        var ventana;
+        function abreVentana(){
+            ventana = window.open("https://educacionadistancia.juntadeandalucia.es/centros/cordoba/login/index.php");
+        }
+        function cierraVentana(){
+            ventana.close();
+        }
+    </script>
+</body>
+</html>

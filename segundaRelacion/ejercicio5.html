@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="respuesta">
+    <input type="button" value="Dime mi letra" onclick="muestraLetra(parseInt(respuesta.value))">
+    <input type="button" value="Comprueba tu DNI" onclick="comprueba(respuesta.value)">
+    <script>
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']; 
+        function muestraLetra(valor){
+            alert("Tu letra es " + letras[valor % 23]);
+        }
+
+        function comprueba(valor){
+            aux = valor[valor.length-1];
+            numero = Number(valor.substring(0,valor.length-1));
+            console.log(aux + " " + numero);
+            (letras[numero % 23] == aux) ? alert('DNI correcto') : alert('DNI incorrecto');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Objetos con clases
+      class Animal2 {
+        //constructor de la clase llamada constructor
+        constructor(nombre, especie) {
+          // atributos
+          this.nombre = nombre;
+          this.especie = especie;
+        }
+        // métodos agregados al prototipo de la función
+        identificar() {
+          console.log("Emito mi sonido característico");
+        }
+        crecer() {
+          console.log("con los años me voy haciendo mayor");
+        }
+      }
+      doraemon = new Animal2("Doraemon", "mamífero");
+      console.log(doraemon);
+      doraemon.identificar();
+      //herencia con clases
+      class Gato2 extends Animal2 {
+        //constructor de la clase
+        constructor(nombre, especie, subespecie) {
+          //método super que lo que hace es llamar al constructor de la clase padre
+          super(nombre, especie);
+          //añadimos el atributo subespecie
+          this.subespecie = subespecie;
+        }
+        //podemos sobreescribir métodos del padre
+        identificar() {
+          console.log("soy un gato dentro de los animales");
+        }
+        //nuevo método que no existe en la clase Animal
+        reproducir() {
+          console.log("Soy vivíparo");
+        }
+      }
+      const garfield = new Gato("Garfield", "Mamífero", "Felino");
+      lucas = new Animal("Lucas", "Ave");
+      garfield2 = new Gato("Garfield2", "Mamífero", "Felino");
+      console.log("Garfield y Lucas como clases");
+      console.log(garfield.identificar());
+      console.log(lucas.identificar());
+      console.log(garfield2.identificar());
+    </script>
+  </body>
+</html>

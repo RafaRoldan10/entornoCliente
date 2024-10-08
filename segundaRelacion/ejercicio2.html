@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="respuesta">
+    <input type="button" value="Muestralos y sumalos" onclick="muestra(parseInt(respuesta.value))">
+    <script>
+        var contador = 9;
+        var suma = 0;
+        var array = [];
+        
+
+        function muestra(numero){
+            array.push(numero);
+            if(contador > -1){
+                alert('Introduce ' + contador + " números más")
+                suma += numero; //Sumo los números hasta que haya 10
+            }
+            else{
+                //Cuando hay 10 muestro la suma y los números
+                document.write('La suma es ' + suma + "<br>");
+                for(let i= 0; i< array.length;i++){
+                    document.write(array[i] + " + ");
+                }
+                document.write(" = " + suma);
+            }
+            contador --;
+        }
+    </script>
+</body>
+</html>

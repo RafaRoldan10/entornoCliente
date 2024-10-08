@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="respuesta">
+    <input type="button" value="Comprueba si es correcto" onclick="comprueba(respuesta.value)">
+    <script>
+        function comprueba(valor){
+            (valor > 10 && valor % 2 == 0) ? document.write('Es correcto') : document.write('No es correcto')
+        }
+    </script>
+</body>
+</html>
