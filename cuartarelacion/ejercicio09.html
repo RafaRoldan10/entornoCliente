@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Introduce el array de la siguiente forma: 1,2,3<br><input type="text" id="array"/>
+    <input type="submit" onclick="ascendenteDescendente(array.value)" />
+    <script>
+        function ascendenteDescendente(array){
+             var num = array.split(",");
+             var objeto = {
+                decreciente : ordenaMayorAMenor([...num]),
+                creciente : ordenaMenorAMayor([...num]),
+            }
+            document.write("Creciente: ",objeto.creciente, "  Decreciente: ", objeto.decreciente);
+        }
+
+        
+        function ordenaMenorAMayor(numeros){
+                for(let i = 0; i < numeros.length; i++){
+                    for(let j = 0; j < numeros.length; j++){
+                        if(Number(numeros[j]) > Number(numeros[i])){
+                            var aux = numeros[j];
+                            numeros[j] = numeros[i];
+                            numeros[i] = aux;
+                        }
+                    }
+                }
+                return numeros;
+            }
+
+        function ordenaMayorAMenor(numeros){
+                for(let i = 0; i < numeros.length; i++){
+                    for(let j = 0; j < numeros.length; j++){
+                        if(Number(numeros[j]) < Number(numeros[i])){
+                            var aux = numeros[j];
+                            numeros[j] = numeros[i];
+                            numeros[i] = aux;
+                        }
+                    }
+                }
+                return numeros;
+            }
+
+    </script>
+</body>
+</html>

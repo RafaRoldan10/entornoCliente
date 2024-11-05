@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="fecha">
+    <input type="submit" value="Calcula cuantos años han pasado" onclick="calculaTiempo(fecha.value)">
+    <script>
+        function calculaTiempo(fecha){
+
+            var actual = new Date();
+            var anioActual = actual.getFullYear();
+            var antigua = new Date(fecha);
+            console.log(antigua);
+            var anioAntiguo = antigua.getFullYear();
+            console.log(anioAntiguo);
+            if(isNaN(anioActual-anioAntiguo) || (anioActual - anioAntiguo < 0)){
+                document.write ("Error en la fecha");
+            }
+            else{
+                document.write(anioActual - anioAntiguo + " años de diferencia");
+            }
+        }
+
+    </script>
+</body>
+</html>

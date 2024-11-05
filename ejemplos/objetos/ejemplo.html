@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        /*var a = new String('pepe');
+      /*var a = new String('pepe');
         console.log(a);
        
         const vehiculo1 ={
@@ -36,9 +36,9 @@
         console.log(coche);
         console.log(motocicleta);*/
 
-        //La siguiente es la buena
+      //La siguiente es la buena
 
-        /*
+      /*
         function UnVehiculo (nombre,tipo){
             // atributos
             this.nombre=nombre;
@@ -53,27 +53,26 @@
         coche.acelerar();
         motocicleta.acelerar();*/
 
-        function Punto(coordX,coordY){
-            this.x=coordX;
-            this.y=coordY;
-            this.mostrarCoordenadas=function(){
-                console.log(this.x);
-                console.log(this.y);
-            }
-        }
-        let a=new Punto(10,20);
-        let b=new Punto(-3,6);
+      function Punto(coordX, coordY) {
+        this.x = coordX;
+        this.y = coordY;
+        this.mostrarCoordenadas = function () {
+          console.log(this.x);
+          console.log(this.y);
+        };
+      }
+      let a = new Punto(10, 20);
+      let b = new Punto(-3, 6);
 
-        console.log(a.mostrarCoordenadas());
-        console.log(b.mostrarCoordenadas());
+      console.log(a.mostrarCoordenadas());
+      console.log(b.mostrarCoordenadas());
 
-        // definamos un método y propiedad para el prototipo objetopadre del objeto Punto
-        Punto.prototype.sumaXY=function(){
-             return this.x+this.y;
-        }
-        console.log(Punto.prototype);
-        console.log(a.sumaXY);
-
+      // definamos un método y propiedad para el prototipo objetopadre del objeto Punto
+      Punto.prototype.sumaXY = function () {
+        return this.x + this.y;
+      };
+      console.log(Punto.prototype);
+      console.log(a.sumaXY);
     </script>
-</body>
+  </body>
 </html>

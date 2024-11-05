@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Introduce tu frase: <input type="text" id="entrada"/>
+    <input type="submit" value="Cuenta" onclick="cuentaVocalesConsonantes(entrada.value)">
+    <script>
+        function cuentaVocalesConsonantes(frase){
+            const vocales = ["a","e","i","o","u","A","E","I","O","U"];
+            var contVocales = 0;
+            var contCons = 0;
+            for(let i = 0; i < frase.length;i++){
+                if(vocales.includes(frase[i])) contVocales++;
+                if(!vocales.includes(frase[i]) && /^[a-zA-Z]$/.test(frase[i])) contCons++;
+            }
+            document.write("Tiene " + contVocales + " vocales y " + contCons + " consonantes");
+        }
+    </script>
+</body>
+</html>

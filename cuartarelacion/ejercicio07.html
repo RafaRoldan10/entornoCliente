@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Introduce el array de la siguiente forma: 1,2,3<br><input type="text" id="array"/>
+    <input type="submit" onclick="menorYMayor(array.value)" />
+    <script>
+      function menorYMayor(valor){
+      const array = valor.split(",");
+      var mayor = array[0];
+      var menor = array[0];
+      array.forEach((numero) => {
+        if (Number(numero) > Number(mayor)) mayor = numero;
+        if (Number(numero) < Number(menor)) menor = numero;
+      });
+      const mostrar = [mayor, menor];
+      document.write("Mayor: ",mostrar[0], " Menor: ",mostrar[1]);
+      }
+    </script>
+  </body>
+</html>

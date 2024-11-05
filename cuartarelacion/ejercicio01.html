@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="entrada"/>
+      <input type="submit" value="Enviar" onclick="invertir(entrada.value)">
+    </form>
+    <script>
+      function invertir(frase) {
+        array = Array.from(frase); //Paso la frase a array
+        palabraInvertida = ""; //añado el array de manera invertida
+        for (let i = array.length - 1; i > -1; i--) {
+          palabraInvertida += array[i];
+        }
+        document.write(palabraInvertida);
+      }
+    </script>
+  </body>
+</html>

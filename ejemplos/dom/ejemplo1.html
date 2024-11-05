@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1" name="nombreDiv">
+      <p name="primero" id="primerParrafo">Primer Parrafo</p>
+      <p id="segundoParrafo">Segundo Parrafo</p>
+    </div>
+    <script>
+        /*var d = document;
+        var divs = d.getElementsByTagName("div");
+        var parrafos = d.getElementsByTagName("p");
+        console.log(divs);
+        console.log(parrafos);
+        console.log(parrafos[1]);*/
+
+        /*var d = document;
+        var divs = d.getElementsByName("nombreDiv");
+        var parrafos = d.getElementsByName("primero");
+        console.log(divs);
+        console.log(parrafos);
+        console.log(parrafos[0]);*/
+
+        /*var d = document;
+        var divs = d.getElementById("div1");
+        var parrafos = d.getElementById("primerParrafo");
+        console.log(divs);
+        console.log(parrafos);*/
+    </script>
+    <a href="https://www.marca.es" id="enlace" data-tema="deportes" style="background-color:yellow;color:green">Ir al Marca</a>
+    <script>
+   /*     var d = document;
+    const $enlace=document.getElementById("enlace");
+    //Acceder a atributos del documento html
+    //con notación del punto
+    console.log(d.documentElement);
+    console.log(document.documentElement.lang);
+    //con getAtribute
+    console.log(document.documentElement.getAttribute("lang"));
+    //Acceder a atributos de un elemento html
+    console.log($enlace.id);
+    console.log($enlace.getAttribute("id"));
+    //asignar valor a un atributo del documento y de un elemento html
+    document.documentElement.lang="es";
+    console.log(document.documentElement.lang);
+    document.documentElement.setAttribute("lang","it");
+    console.log(document.documentElement.lang);
+    //acceso a data-atributes
+    //mediante notación punto
+    console.log($enlace.dataset.tema);
+    //mediante getAttribute (de la misma forma que atributos normales)
+    console.log($enlace.getAttribute("data-tema"));*/
+
+    </script>
+
+<script>
+  let $parrafo1=document.getElementById("primerParrafo");
+  let texto=`<p id="parrafo3">Párrafo tercero para aprender manejo de elementos</p>
+  <p id="parrafo4">Párrafo cuarto para aprender manejo de elementos</p>
+  <ul>
+  <li>1º DAW</li>
+  <li>2º DAW</li>
+  </ul>`;
+  //mostrar elemento html y su contenido textual
+  console.log($parrafo1,$parrafo1.innerText);
+  //cambiar contenido textual del elemento html
+  let $textoElemento=$parrafo1.innerText;
+  $parrafo1.innerText=texto;
+  console.log($parrafo1);
+  $parrafo1.innerText=$textoElemento;
+  console.log($parrafo1);
+  $parrafo1.textContent=texto;
+  console.log($parrafo1);
+  $parrafo1.innerText=$textoElemento;
+  console.log($parrafo1);
+  $parrafo1.innerHTML=texto;
+  console.log($parrafo1);
+  // sustituye el párrafo 1 por el 3 y el 4 (se puede comprobar en element del navegador)
+  $parrafo1.outerHTML=texto;
+  console.log($parrafo1);
+  </script>
+  </body>
+</html>

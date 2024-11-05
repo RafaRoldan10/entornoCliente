@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Introduce el array de la siguiente forma: 1,2,3<br /><input type="text"id="array"/>
+    <input type="submit" onclick="paresEImpares(array.value)" />
+    <script>
+      function paresEImpares(valor) {
+        var numeros = valor.split(",").map(Number);
+        var objeto = {
+          pares: [],
+          impares: [],
+          ordena: function (array) {
+            for (let i = 0; i < array.length; i++) {
+              if (array[i] % 2 == 0) {
+                this.pares.push(array[i]);
+              } else {
+                this.impares.push(array[i]);
+              }
+            }
+          },
+        };
+       objeto.ordena(numeros);
+       document.write("Pares: ",objeto.pares," Impares: ",objeto.impares);
+      }
+    </script>
+  </body>
+</html>

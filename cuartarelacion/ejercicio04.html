@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Introduce tu numero: <input type="text" id="entrada"/>
+    <input type="submit" value="Es Capicua" onclick="esCapicua(entrada.value)">
+    <script>
+        function esCapicua(numero){
+            capicua = true;
+            for(let i = 0; i < numero.length/2 ;i++){
+                if(numero[i] != numero[numero.length-(i + 1)]) capicua = false;
+            }
+            document.write(capicua ? "ES CAPICUA" : "NO ES CAPICUA");
+        }
+    </script>
+</body>
+</html>

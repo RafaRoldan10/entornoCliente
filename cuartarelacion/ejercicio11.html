@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Habitacion{
+            constructor(numero,capacidad,servicios){
+                this.numero = numero;
+                this.capacidad = capacidad;
+                this.servicios = servicios;
+            }
+
+            calcularPrecio(capacidad,servicios){
+                var a = capacidad * 24 + servicios * 3;
+                
+                return a;
+            }
+        }
+
+        class habitacionHotel extends Habitacion{
+            constructor(numero,capacidad,servicios,director,categoria,numsHabitacionesEstandar,numHabsSuite){
+                super(numero,capacidad,servicios);
+                this.director = director;
+                this.categoria = categoria;
+                this.numsHabitacionesEstandar = numsHabitacionesEstandar;
+                this.numHabsSuite = numHabsSuite;
+
+            
+            }
+
+            calcularPrecio(capacidad,servicios,categoria){
+                var a = super.calcularPrecio(capacidad,servicios) * (1 + 0.05 * categoria);
+                
+                return a;
+            }
+
+            calcularRecaudacionHotel(){
+                var sumaEstandar = this.calcularPrecio(this.capacidad,2,this.categoria);//Calculamos cuanto vale una estandar con dos servicios en dicho hotel con la capacidad de la habitacion y la categoria del hotel
+                var sumaSuite = this.calcularPrecio(this.capacidad,5,this.categoria);//Calculamos cuanto vale una suite con cinco servicios en dicho hotel con la capacidad de la habitacion y la categoria del hotel
+                var sumaTotal = sumaEstandar * this.numsHabitacionesEstandar + sumaSuite * this.numHabsSuite;
+                return sumaTotal;
+
+            }
+        }
+
+        //Lo probamos
+        var hab = new Habitacion(0,3,2);
+        document.write("El precio de esta habitación es: ",hab.calcularPrecio(hab.capacidad,hab.servicios));
+
+        var hab2 = new habitacionHotel(0,3,2,"un director",5,1,1);//Aquí el número de habitacionesSuit y estándar no harían falta puesto que solo estamos calculando el precio de una habitación
+        //Tiene la misma capacidad y servicios que la variable hab
+        document.write("<br><br>El precio de esta habitacion de hotel es:",hab2.calcularPrecio(hab2.capacidad,hab2.servicios,hab2.categoria));
+    
+        //utilizo el número de habitaciones estándar de la variable hab2 que es una y también de las suit que es una
+        document.write("<br><br>El precio de este de hotel es:",hab2.calcularRecaudacionHotel());
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      Frase Entera:<input type="text" id="frase" /> Frase a encontrar:<input
+        type="text"
+        id="entrada"
+      />
+      <input
+        type="submit"
+        value="Enviar"
+        onclick="encuentra(frase.value,entrada.value)"
+      />
+    </form>
+    <script>
+      function encuentra(fraseEntera, fraseEncontrar) {
+        cont = 0;
+        array = fraseEntera.split(" ");
+        var indice = array.indexOf(fraseEncontrar);
+        while (indice != -1) {
+          cont ++;
+          indice = array.indexOf(fraseEncontrar, indice+ 1);
+        }
+        document.write(cont," veces");
+      }
+
+      //Con includes
+       
+    </script>
+  </body>
+</html>
