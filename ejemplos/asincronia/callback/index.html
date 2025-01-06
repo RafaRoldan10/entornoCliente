@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*function antes() {
+        // Simular retardo
+        setTimeout(function () {
+            console.log("antes");
+        }, 1000);
+    }
+    function despues() {
+        console.log("después");
+    }
+    antes();
+    despues();*/
+
+    /*function promesaCuadrado(valor) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ valor, resultado: valor * valor });
+        }, 1000);
+      });
+    }
+
+    promesaCuadrado(0)
+      .then((obj) => {
+        console.log("inicio promesa");
+        console.log(`promesa:${obj.valor},${obj.resultado}`);
+        return promesaCuadrado(1);
+      })
+      .then((obj) => {
+        console.log(`promesa:${obj.valor},${obj.resultado}`);
+        return promesaCuadrado(2);
+      })
+      .then((obj) => {
+        console.log(`promesa:${obj.valor},${obj.resultado}`);
+        return promesaCuadrado(3);
+      })
+      .then((obj) => {
+        console.log(`promesa:${obj.valor},${obj.resultado}`);
+        return promesaCuadrado(4);
+      })
+      .then((obj) => {
+        console.log(`promesa:${obj.valor},${obj.resultado}`);
+        return promesaCuadrado(5);
+      })
+      .then((obj) => {
+        console.log("Fin promesa");
+      })
+      .catch((error) => {
+        console.error("error");
+      });*/
+
+    function promesaCuadrado(valor) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ valor: valor, resultado: valor * valor });
+        }, 1000);
+      });
+    }
+    async function funcionAsincrona() {
+      try {
+        console.log("inicio función asíncrona");
+        let obj = promesaCuadrado(0);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        obj = await promesaCuadrado(1);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        obj = await promesaCuadrado(2);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        obj = await promesaCuadrado(3);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        obj = await promesaCuadrado(4);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        obj = await promesaCuadrado(5);
+        console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+        console.log("fin función asíncrona");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    funcionAsincrona();
+  </script>
+</html>

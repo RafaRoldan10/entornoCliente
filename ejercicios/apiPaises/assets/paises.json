@@ -1,0 +1,39 @@
+{
+  "paises": [
+    {
+      "id": "1",
+      "nombre": "España",
+      "capital": "Madrid"
+    },
+    {
+      "id": "2",
+      "nombre": "Francia",
+      "capital": "Paris"
+    },
+    {
+      "id": "3",
+      "nombre": "Portugal",
+      "capital": "Lisboa"
+    },
+    {
+      "id": "4",
+      "nombre": "Alemania",
+      "capital": "Berlin"
+    },
+    {
+      "id": "5",
+      "nombre": "Italia",
+      "capital": "Roma"
+    },
+    {
+      "id": "6",
+      "nombre": "Belgica",
+      "capital": "Bruselas"
+    },
+    {
+      "id": "7",
+      "nombre": "Reino Unido",
+      "capital": "Londres"
+    }
+  ]
+}

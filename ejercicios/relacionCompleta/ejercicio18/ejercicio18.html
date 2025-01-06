@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejercicio18.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .novisible {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #derecha{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Matriculate</h1>
+    <div class="contenedor">
+        <div id="izquierda">
+            <h2>Matriculacion en Grado Superior</h2>
+            <form id="formularioSuperior" action="">
+                <fieldset>
+                Nombre: <input type="text" name="nomSuperior" title="Solo pueden existir letras y espacios"
+                    id="nombreSuperior" class="formularioMatricula" pattern="^[a-zA-Z\s]+$" required><br><br>
+                Apellidos: <input type="text" name="apelSuperior" title="Solo pueden existit letras y espacios"
+                    id="apellidosSuperior" class="formularioMatricula" pattern="^[a-zA-Z\s]+$" required><br><br>
+                Calle: <input type="text" title="Formato: C/aaaa aaa,nº0" name="calSuperior" id="calleSuperior"
+                    class="formularioMatricula" pattern="C/[a-zA-Z\s]+[,]nº[0-9]+" required><br><br>
+                Genero:
+                <input type="radio" name="radiobutton" value="Hombre"> Hombre
+                <input type="radio" name="radiobutton" value="Mujer"> Mujer
+                <br><br>
+                Edad: <input type="number" id="edad" class="formularioMatricula" title="Solo pueden exisitir números"
+                    pattern="^[0-9]+$"><br><br>
+                Curso:
+                <select id="selectSuperior">
+                    <option>Selecciona Uno</option>
+                    <option value="1">1º</option>
+                    <option value="2">2º</option>
+                </select><br><br>
+                <input type="checkbox" value="Bases de Datos">Base de Datos<br>
+                <input type="checkbox" value="Programacion"> Programacion<br>
+                <input type="checkbox" value="Lenguajes de Marcas"> Lenguaje De Marcas<br>
+                <input type="checkbox" value="Entornos de Desarrollo">Entornos de Desarrollo<br>
+                <input type="checkbox" value="FOL">FOL<br>
+                <input type="checkbox" value="Sistemas Informaticos">Sistemas Informáticos<br>
+                <input type="checkbox" value="DWEC">DWEC<br>
+                <input type="checkbox" value="DWES">DWES<br>
+                <input type="checkbox" value="HLC">HLC<br>
+                <input type="checkbox" value="Despliegue">Despliegue<br>
+                <input type="checkbox" value="Empresas">Empresas<br>
+                <input type="checkbox" value="Diseño">Diseño<br>
+                <br><br>
+                <textarea placeholder="Indique alguna observación" id="tSuperior"></textarea><br><br>
+                <button id="botonEnviarSuperior">Enviar</button>
+                <button id="botonReestablecerSuperior">Reestablecer</button>
+               </fieldset>
+            </form>
+        </div>
+        <div id="derecha">
+            <h2>Matriculacion en Grado Medio</h2>
+            <form id="formularioMedio" action="">
+                <fieldset>
+                Nombre: <input type="text" name="nomMedio" title="Solo pueden existir letras y espacios"
+                    id="nombreMedio" class="formularioMatricula" pattern="^[a-zA-Z\s]+$" required><br><br>
+                Apellidos: <input type="text" name="apelMedio" title="Solo pueden existit letras y espacios"
+                    id="apellidosMedio" class="formularioMatricula" pattern="^[a-zA-Z\s]+$" required><br><br>
+                Calle: <input type="text" title="Formato: C/aaaa aaa,nº0" name="calMedio" id="calleMedio"
+                    class="formularioMatricula" pattern="C/[a-zA-Z\s]+[,]nº[0-9]+" required><br><br>
+                Genero:
+                <input type="radio" name="radiobutton" value="Hombre"> Hombre
+                <input type="radio" name="radiobutton" value="Mujer"> Mujer
+                <br><br>
+                Edad: <input type="number" id="edadMedio" class="formularioMatricula" title="Solo pueden exisitir números"
+                    pattern="^[0-9]+$"><br><br>
+                Curso:
+                <select id="selectMedio">
+                    <option>Selecciona Uno</option>
+                    <option value="1">1º</option>
+                    <option value="2">2º</option>
+                </select><br><br>
+                <input type="checkbox" value="Aplicaciones Ofimaticas">Aplicaciones Ofimaticas<br>
+                <input type="checkbox" value="Redes Locales">Redes Locales<br>
+                <input type="checkbox" value="Sistemas Operativos Monopuesto">Sistemas Operativos Monopuesto<br>
+                <input type="checkbox" value="Montaje y Mantenimiento de Equipos">Montaje y Mantenimiento de Equipos<br>
+                <input type="checkbox" value="FOL">FOL<br>
+                <input type="checkbox" value="Aplicaciones WEB">Aplicaciones WEB<br>
+                <input type="checkbox" value="Seguridad Informatica">Seguridad Informatica<br>
+                <input type="checkbox" value="Servicios en Red">Servicios en Red<br>
+                <input type="checkbox" value="Sistemas Operativos en Red">Sistemas Operativos en Red<br>
+                
+                <input type="checkbox" value="Empresas">Empresas<br>
+                
+                <br><br>
+                <textarea placeholder="Indique alguna observación" id="tMedio"></textarea><br><br>
+                <button id="botonEnviarMedio">Enviar</button>
+                <button id="botonReestablecerMedio">Reestablecer</button>
+               </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

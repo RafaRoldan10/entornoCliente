@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Pelicula{
+        constructor(id,titulo,estreno,paises,genero){
+         //Comprobamos que cumplen las condiciones
+             if(/^[A-Za-z]{2}[0-9]{7}$/.test(id)) {
+                this.id = id;
+            }
+            else{
+                console.log("El id tiene que tener dos letras al principio y después siete números");
+            }
+
+             if(titulo.length < 100){
+                this.titulo = titulo;
+             } 
+             else{
+                console.log("El titulo no puede superar los 100 caracteres");
+             }
+             if(/^[0-9]{4}$/.test(estreno)){
+                this.estreno = estreno;
+             }
+             else{
+                console.log("El año tiene que tener 4 dígitos");
+             }
+             if(Array.isArray(paises)){
+                this.paises = paises;
+             }
+             else{
+                console.log("Los paises tienen que ser un array");
+             }
+             if(Pelicula.returnGeneros().includes(genero)){
+                this.genero = genero;
+             }
+             else{
+                console.log("El genero tiene que estar en el array");
+             }
+          };
+
+          static returnGeneros(){
+              const generos = ["Action","Adult","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","Film Noir",
+                  "Game-Show","History","Horror","Musical","Music","Mystery","News","Reality-TV","Romance","Sci-Fi","Short","Sport","Talk-Show","Thriller","War","Western"
+              ]
+              return generos;
+          }
+
+          imprimeFicha() {
+          if(this.id === undefined){
+            document.write("El id esta mal<br><br>")
+          }
+          else{
+            document.write("ID: ", this.id,"<br><br>");
+          }
+          if(this.titulo === undefined){
+            document.write("El título no puede superar los 100 caracteres <br><br>")
+          }
+          else{
+            document.write("Titulo: ",this.titulo,"<br><br>");
+          }
+          if(this.estreno === undefined){
+            document.write( "El año tiene que tener 4 dígitos", "<br><br>")
+          }
+          else{
+            document.write("Año de estreno: ",this.estreno,"<br><br>");
+          }
+          
+          
+          
+          document.write("Países: ");
+          if (Array.isArray(this.paises)) {
+            for (let i = 0; i < this.paises.length; i++) {
+              document.write(this.paises[i]," - ");
+            }
+          } else {
+            document.write("Los países tienen que ser un array<br><br>");
+          }
+          if(this.genero === undefined){
+            document.write( "El genero tiene que estar en el array", "<br><br>")
+          }
+          else{
+            document.write("Genero: ",this.genero,"<br><br>");
+          }
+          
+        }
+      }
+
+          
+
+
+      
+
+      var peli1 = new Pelicula("AA1111111","Hola","2004",["España"],"Action");
+      var peli2 = new Pelicula("AB2222222","Adios","2004",["España","Francia"],"Action");
+      var peli3 = new Pelicula("ABD111111","Gol","2005",["España","Italia"],"Action");
+
+      var peliculas = [peli1,peli2,peli3];
+      peliculas.forEach(element => {
+        element.imprimeFicha();
+        document.write("<br>=========================<br>");
+      });
+    </script>
+  </body>
+</html>
