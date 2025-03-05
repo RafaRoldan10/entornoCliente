@@ -17,13 +17,13 @@ const songs = [
     path: "assets/modelito.mp3",
     displayName: "Modelito",
     cover: "assets/modelito.jpg",
-    artist: "Mora",
+    artist: "Mora,YOVNGCHIMI",
   },
   {
     path: "assets/memorias.mp3",
     displayName: "Memorias",
     cover: "assets/memorias.jpg",
-    artist: "Mora",
+    artist: "Mora,JHAYCO",
   },
   {
     path: "assets/ia.mp3",
